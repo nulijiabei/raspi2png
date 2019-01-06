@@ -49,7 +49,7 @@
 
 #define DEFAULT_DELAY 0
 #define DEFAULT_DISPLAY_NUMBER 0
-#define DEFAULT_NAME "snapshot.png"
+#define DEFAULT_NAME "/dev/shm/snap.png"
 
 //-----------------------------------------------------------------------
 
@@ -590,6 +590,8 @@ main(
 
     free(pngImagePtr);
     pngImagePtr = NULL;
+
+    system("/usr/bin/mogrify -format jpg /dev/shm/snap.png");
 
     return 0;
 }
