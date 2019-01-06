@@ -591,7 +591,7 @@ main(
     free(pngImagePtr);
     pngImagePtr = NULL;
 
-    system("/usr/bin/mogrify -format jpg /dev/shm/snap.png");
+    system("/usr/bin/mogrify -format jpg -resize 50% /dev/shm/snap.png");
 
     return 0;
 }
